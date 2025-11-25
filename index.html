@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Priyam Mukherjee | MCA Graduate Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Priyam Mukherjee, looking for opportunities in the IT field." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-light: #111827;
+      --card: #020617;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius: 14px;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --transition: 0.25s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.7), transparent);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #3b82f6, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #e5e7eb;
+      border: 2px solid rgba(148, 163, 184, 0.6);
+      box-shadow: 0 0 16px rgba(59, 130, 246, 0.6);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text span:first-child {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      background: var(--accent-soft);
+      color: #bfdbfe;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #0b1120;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 20px;
+      height: 2px;
+      background: #e5e7eb;
+      border-radius: 999px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: 0.5rem 1.25rem 0.9rem;
+      background: #020617;
+      border-bottom: 1px solid #111827;
+    }
+
+    .mobile-menu a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      padding-top: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-intro {
+      font-size: 0.85rem;
+      color: #93c5fd;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.75rem;
+      border: 1px solid rgba(37, 99, 235, 0.6);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-intro-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      color: #60a5fa;
+    }
+
+    .hero-subtitle {
+      font-size: 0.93rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      color: #cbd5f5;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.86rem;
+      background: #3b82f6;
+      color: #0b1120;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.52rem 1.1rem;
+      font-size: 0.83rem;
+      border: 1px solid #374151;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-ghost:hover {
+      background: #111827;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item span {
+      display: block;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.7rem;
+      color: #6b7280;
+    }
+
+    .hero-meta-value {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Hero right card */
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), #020617);
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem;
+      border: 1px solid #1f2937;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #3b82f6, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      border: 2px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .hero-card-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-card-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card-body {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-footer {
+      font-size: 0.78rem;
+      color: #bfdbfe;
+      border-radius: 0.75rem;
+      padding: 0.55rem 0.7rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(37, 99, 235, 0.6);
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.3rem;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      color: #6b7280;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    /* About */
+
+    .about-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 840px) {
+      .about-content {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about-text p + p {
+      margin-top: 0.7rem;
+    }
+
+    .info-card {
+      background: #020617;
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.83rem;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .info-value {
+      font-size: 0.83rem;
+      text-align: right;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .skill-card {
+      background: #020617;
+      border-radius: var(--radius);
+      padding: 0.75rem 0.8rem;
+      border: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+
+    .skill-title {
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+    }
+
+    .skill-tag {
+      font-size: 0.72rem;
+      padding: 0.14rem 0.4rem;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      color: #cbd5f5;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-card {
+      background: #020617;
+      border-radius: var(--radius);
+      padding: 0.8rem 0.85rem;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .project-type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      font-size: 0.75rem;
+      color: #93c5fd;
+      margin-top: 0.1rem;
+    }
+
+    .project-link {
+      margin-top: 0.25rem;
+      font-size: 0.78rem;
+      color: #60a5fa;
+      cursor: pointer;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 840px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      font-size: 0.82rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    input,
+    textarea {
+      border-radius: 0.6rem;
+      border: 1px solid #111827;
+      background: #020617;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      outline: none;
+      resize: vertical;
+      transition: var(--transition);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b7280;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.7);
+    }
+
+    textarea {
+      min-height: 90px;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .contact-info {
+      background: #020617;
+      border-radius: var(--radius);
+      padding: 0.85rem 0.9rem;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-row-label {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-row-value {
+      font-size: 0.86rem;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid #020617;
+      margin-top: 2.4rem;
+      padding: 1.2rem 1.25rem 2.2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+      background: #020617;
+    }
+
+    .scroll-top {
+      position: fixed;
+      right: 1.3rem;
+      bottom: 1.4rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: #3b82f6;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      z-index: 30;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links, .nav-cta {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo-circle">
+        PM
+      </div>
+      <div class="brand-text">
+        <span>Priyam Mukherjee</span>
+        <span>MCA Graduate • IT Aspirant</span>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <button class="nav-cta" onclick="scrollToSection('contact')">
+      Hire / Connect
+    </button>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main class="wrapper">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div>
+      <div class="hero-intro">
+        <div class="hero-intro-dot"></div>
+        MCA Graduate • Open to IT roles
+      </div>
+      <h1 class="hero-title">
+        Hi, I’m <span>Priyam Mukherjee</span> — an MCA graduate looking for my first opportunity in the IT field.
+      </h1>
+      <p class="hero-subtitle">
+        I’ve recently completed my <strong>Master of Computer Application (MCA)</strong> and I’m actively looking for roles such as
+        <strong>Software Developer, Web Developer, Backend Developer, or IT Trainee</strong>. I enjoy working with
+        <strong>Python, Django, SQL, HTML, CSS, and JavaScript</strong> and building real-world projects that solve problems.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">MCA Fresher</span>
+        <span class="tag">Python & Django</span>
+        <span class="tag">SQL</span>
+        <span class="tag">HTML, CSS, JS</span>
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="scrollToSection('contact')">
+          Contact Me
+        </button>
+        <button class="btn-ghost" onclick="scrollToSection('projects')">
+          View My Projects
+        </button>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Degree</span>
+          <span class="hero-meta-value">MCA (Year of Passing: 202X)</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Location</span>
+          <span class="hero-meta-value">Dhanbad, India</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Looking for</span>
+          <span class="hero-meta-value">Full-time / Internship in IT</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="avatar">
+            PM
+          </div>
+          <div>
+            <div class="hero-card-name">Priyam Mukherjee</div>
+            <div class="hero-card-role">MCA Graduate | Aspiring Software / Web Developer</div>
+          </div>
+        </div>
+        <div class="hero-card-body">
+          Passionate about <strong>web development</strong> using Python, Django, and SQL. I enjoy
+          learning new technologies and writing clean, understandable code.
+        </div>
+        <ul class="hero-card-list">
+          <li>• Comfortable with: <strong>Python, Django, SQL</strong></li>
+          <li>• Familiar with: <strong>HTML, CSS, JavaScript</strong></li>
+          <li>• Interested in: <strong>Web Development, APIs, Backend</strong></li>
+        </ul>
+        <div class="hero-card-footer">
+          “I may be a fresher, but I’m serious about improving every day and adding value to the team I join.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Who I am.</h2>
+      <p class="section-description">
+        A brief overview of my background, education, and the kind of roles I’m actively looking for.
+      </p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I am <strong>Priyam Mukherjee</strong> from <strong>Dhanbad</strong>, a recent <strong>MCA graduate</strong> with a strong interest in
+          web development and backend technologies. During my degree, I worked on academic projects like
+          <strong>“Track Your Class”</strong> and <strong>“Stock Price Prediction”</strong>, which helped me apply concepts
+          in Python, Django, SQL and basic frontend technologies.
+        </p>
+        <p>
+          I’m currently looking for an opportunity in the <strong>IT field</strong> where I can apply what I’ve learned,
+          gain real-world experience, and keep improving my technical and problem-solving skills. I’m open to roles such as
+          <strong>Software Developer, Web Developer, Support Engineer, IT Trainee</strong>, or any role where I can grow.
+        </p>
+        <p>
+          I’m comfortable working in a team, willing to learn new tools quickly, and ready to adapt based on project or company needs.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-item">
+          <span class="info-label">Highest Qualification</span>
+          <span class="info-value">MCA (Master of Computer Application)</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Passing Year</span>
+          <span class="info-value">2024 </span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">University / College</span>
+          <span class="info-value">Asansol Engineering College</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Current Status</span>
+          <span class="info-value">Actively looking for IT job</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-header">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">What I know (and keep improving).</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-title">Backend & Programming</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Django</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Relational DB concepts</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Frontend Basics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Tools & IDEs</div>
+        <div class="skill-tags">
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Git (basic)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Core Concepts</div>
+        <div class="skill-tags">
+          <span class="skill-tag">OOP (basics)</span>
+          <span class="skill-tag">DBMS</span>
+          <span class="skill-tag">APIs (basics)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Quick Learner</span>
+          <span class="skill-tag">Team Player</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">Some work I’ve done.</h2>
+      <p class="section-description">
+        Here are a few academic and practice projects I’ve worked on using Python, Django, SQL, and basic web technologies.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-type">Major Project</div>
+        <div class="project-title">Track Your Class</div>
+        <div class="project-desc">
+          A web-based application to help students or faculty track classes, schedules, and attendance in an organized way.
+          It aims to simplify classroom management and provide an easy dashboard to view important details.
+        </div>
+        <div class="project-tech">Tech used: SQLite, HTML, CSS, JavaScript</div>
+        <div class="project-link">GitHub</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">Project</div>
+        <div class="project-title">Stock Price Prediction</div>
+        <div class="project-desc">
+          A project focused on predicting stock prices using historical data. It explores basic machine learning or
+          data analysis techniques to understand trends and make simple predictions.
+        </div>
+        <div class="project-tech">Tech used: Python,NumPy,Pandas,Django</div>
+        <div class="project-link">GitHub </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">Personal Practice</div>
+        <div class="project-title">Portfolio Website</div>
+        <div class="project-desc">
+          This portfolio site itself, created using HTML, CSS, and a bit of JavaScript to present my skills,
+          projects, and contact information in a clean, simple way.
+        </div>
+        <div class="project-tech">Tech used: HTML, CSS, JavaScript</div>
+        <div class="project-link">You are viewing it now</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s connect.</h2>
+      <p class="section-description">
+        You can contact me for fresher roles, internships, or trainee positions in the IT field.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input id="name" type="text" required placeholder="Enter your name" />
+          </div>
+          <div class="field">
+            <label for="email">Your Email</label>
+            <input id="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" required placeholder="Write your message or requirements here..."></textarea>
+          </div>
+          <button class="btn-primary" type="submit">
+            Send (demo)
+          </button>
+          <p id="formMessage" class="contact-note"></p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div>
+          <div class="contact-row-label">Email</div>
+          <div class="contact-row-value">
+            priyamukherjee64@gmail.com
+          </div>
+        </div>
+        <div>
+          <div class="contact-row-label">Phone</div>
+          <div class="contact-row-value">
+            +91-7979897693
+          </div>
+        </div>
+        <div>
+          <div class="contact-row-label">LinkedIn</div>
+          <div class="contact-row-value">
+            https://www.linkedin.com/in/priyam-mukherjee-143864316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+          </div>
+        </div>
+        <div>
+          <div class="contact-row-label">GitHub</div>
+          <div class="contact-row-value">
+            https://github.com/PriyamMukherjee
+          </div>
+        </div>
+        <div>
+          <div class="contact-row-label">Location</div>
+          <div class="contact-row-value">
+            Dhanbad, India (Open to relocation / remote)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Priyam Mukherjee — MCA Graduate. All rights reserved.
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+  ↑
+</button>
+
+<script>
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Smooth scroll helper
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Mobile menu
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.style.display = "none";
+    });
+  });
+
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 260) {
+      scrollTopBtn.classList.add("visible");
+    } else {
+      scrollTopBtn.classList.remove("visible");
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Demo form handling
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const msg = document.getElementById("formMessage");
+    msg.textContent = "This is a demo form. You can connect this to your email or backend later.";
+  }
+</script>
+
+</body>
+</html>
